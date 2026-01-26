@@ -21,6 +21,34 @@ function Canvas({ socket, roomId, isDrawer }) {
         loadCanvasState,
     } = useDrawing({ socket, roomId, isDrawer })
 
+    // Initialize canvas when component mounts
+    useEffect(() => {
+        const canvas = canvasRef.current
+        if (!canvas) return
+
+        // Initialize canvas dimensions
+        canvas.width = canvas.offsetWidth
+        canvas.height = canvas.offsetHeight
+
+        const ctx = canvas.getContext('2d')
+        ctx.fillStyle = '#ffffff'
+        ctx.fillRect(0, 0, canvas.width, canvas.height)
+
+        console.log('Canvas initialized:', canvas.width, 'x', canvas.height)
+
+        // Load saved strokes from localStorage
+        const savedStrokes = localStorage.getItem(`canvas_${roomId}`)
+        if (savedStrokes) {
+            try {
+                const parsedStrokes = JSON.parse(savedStrokes)
+                console.log('Loading saved strokes from localStorage:', parsedStrokes.length)
+                loadCanvasState(parsedStrokes)
+            } catch (error) {
+                console.error('Error loading saved strokes:', error)
+            }
+        }
+    }, [roomId, loadCanvasState])
+
     // Redraw canvas whenever strokes change
     useEffect(() => {
         const canvas = canvasRef.current
@@ -29,6 +57,18 @@ function Canvas({ socket, roomId, isDrawer }) {
         console.log('Redrawing canvas with', strokes.length, 'strokes')
         redrawAllStrokes(canvas, strokes)
     }, [strokes])
+
+    // Save strokes to localStorage whenever they change
+    useEffect(() => {
+        if (strokes.length > 0) {
+            localStorage.setItem(`canvas_${roomId}`, JSON.stringify(strokes))
+            console.log('Saved', strokes.length, 'strokes to localStorage')
+        } else {
+            // Clear localStorage if canvas is empty
+            localStorage.removeItem(`canvas_${roomId}`)
+            console.log('Cleared localStorage for canvas')
+        }
+    }, [strokes, roomId])
 
     // Listen for socket events
     useEffect(() => {
