@@ -1,0 +1,37 @@
+<svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background circle with gradient -->
+  <defs>
+    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#38bdf8;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#a855f7;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="grad2" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#fbbf24;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#f97316;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Main circle background -->
+  <circle cx="100" cy="100" r="95" fill="url(#grad1)" opacity="0.9"/>
+  
+  <!-- Paintbrush -->
+  <path d="M60 140 L70 130 L90 150 L80 160 Z" fill="#ffffff" opacity="0.9"/>
+  <path d="M70 130 L100 100 L120 120 L90 150 Z" fill="url(#grad2)"/>
+  <rect x="95" y="75" width="15" height="40" rx="2" fill="#1e293b" transform="rotate(-45 102.5 95)"/>
+  
+  <!-- Pencil -->
+  <path d="M130 60 L140 70 L110 100 L100 90 Z" fill="#fbbf24" opacity="0.9"/>
+  <path d="M140 70 L150 60 L160 70 L150 80 Z" fill="#f59e0b"/>
+  <polygon points="150,55 155,60 150,65" fill="#1e293b"/>
+  
+  <!-- Palette circles -->
+  <circle cx="120" cy="140" r="8" fill="#ef4444"/>
+  <circle cx="140" cy="135" r="8" fill="#3b82f6"/>
+  <circle cx="130" cy="155" r="8" fill="#22c55e"/>
+  <circle cx="150" cy="150" r="8" fill="#eab308"/>
+  
+  <!-- Sparkles -->
+  <path d="M50 70 L52 75 L57 77 L52 79 L50 84 L48 79 L43 77 L48 75 Z" fill="#ffffff" opacity="0.8"/>
+  <path d="M160 110 L162 113 L165 115 L162 117 L160 120 L158 117 L155 115 L158 113 Z" fill="#ffffff" opacity="0.8"/>
+  <path d="M75 50 L76 52 L78 53 L76 54 L75 56 L74 54 L72 53 L74 52 Z" fill="#ffffff" opacity="0.6"/>
+</svg>
