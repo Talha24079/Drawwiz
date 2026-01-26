@@ -37,6 +37,7 @@ export default {
                 'fade-in': 'fadeIn 0.3s ease-in',
                 'slide-up': 'slideUp 0.3s ease-out',
                 'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                'bounce-slow': 'bounce 2s ease-in-out infinite',
             },
             keyframes: {
                 fadeIn: {
