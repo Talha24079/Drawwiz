@@ -1,4 +1,3 @@
-import React from 'react';
 import { LeaderboardEntry } from '../../types/game.types';
 
 interface PodiumProps {

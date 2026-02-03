@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { fabric } from 'fabric';
 import { Socket } from 'socket.io-client';
 
@@ -9,8 +9,6 @@ interface CanvasProps {
   currentColor: string;
   currentWidth: number;
   currentTool: 'pen' | 'fill';
-  onUndo: () => void;
-  onRedo: () => void;
 }
 
 export function Canvas({
@@ -19,9 +17,7 @@ export function Canvas({
   isDrawing,
   currentColor,
   currentWidth,
-  currentTool,
-  onUndo,
-  onRedo
+  currentTool
 }: CanvasProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const fabricCanvasRef = useRef<fabric.Canvas | null>(null);

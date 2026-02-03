@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { Socket } from 'socket.io-client';
 import { Player } from '../../types/game.types';
 import { Canvas } from './Canvas';
@@ -30,7 +30,6 @@ export function GameScreen({
   const [turnEndTime, setTurnEndTime] = useState<number | null>(null);
   const [wordChoices, setWordChoices] = useState<string[]>([]);
   const [currentRound, setCurrentRound] = useState(1);
-  const [totalRounds, setTotalRounds] = useState(3);
   
   const [currentColor, setCurrentColor] = useState('#000000');
   const [currentWidth, setCurrentWidth] = useState(5);
@@ -129,7 +128,7 @@ export function GameScreen({
           <div className="flex justify-between items-center">
             <div>
               <h1 className="text-2xl font-bold text-gray-800">DrawWiz</h1>
-              <p className="text-gray-600">Round {currentRound} of {totalRounds}</p>
+              <p className="text-gray-600">Round {currentRound}</p>
             </div>
             <div className="text-right">
               <p className="text-sm text-gray-600">Room: {roomCode}</p>
@@ -197,8 +196,6 @@ export function GameScreen({
               currentColor={currentColor}
               currentWidth={currentWidth}
               currentTool={currentTool}
-              onUndo={() => {}}
-              onRedo={() => {}}
             />
           </div>
 

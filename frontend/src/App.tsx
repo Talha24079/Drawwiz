@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useSocket } from './hooks/useSocket';
 import { Room } from './types/game.types';
 import { HomeScreen } from './components/Home/HomeScreen';

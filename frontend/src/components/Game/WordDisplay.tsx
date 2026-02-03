@@ -1,9 +1,7 @@
-import React from 'react';
-
 interface WordDisplayProps {
   wordHint: string | null;
   isDrawing: boolean;
-  currentWord?: string;
+  currentWord?: string | null;
 }
 
 export function WordDisplay({ wordHint, isDrawing, currentWord }: WordDisplayProps) {

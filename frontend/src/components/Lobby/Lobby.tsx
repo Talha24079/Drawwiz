@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { Socket } from 'socket.io-client';
 import { Room, GameSettings as GameSettingsType } from '../../types/game.types';
 import { PlayerList } from './PlayerList';

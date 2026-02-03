@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 
 interface TimerProps {
   turnEndTime: number | null;
@@ -27,10 +27,6 @@ export function Timer({ turnEndTime }: TimerProps) {
 
   const minutes = Math.floor(timeRemaining / 60);
   const seconds = timeRemaining % 60;
-
-  const percentage = turnEndTime
-    ? Math.max(0, ((turnEndTime - Date.now()) / (turnEndTime - (turnEndTime - (timeRemaining * 1000)))) * 100)
-    : 0;
 
   return (
     <div className="bg-white rounded-lg shadow-lg p-4">

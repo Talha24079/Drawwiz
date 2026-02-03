@@ -1,4 +1,3 @@
-import React from 'react';
 import { GameSettings as GameSettingsType } from '../../types/game.types';
 
 interface GameSettingsProps {
